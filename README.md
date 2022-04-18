@@ -25,10 +25,10 @@ Please find installation instructions for PyTorch and PySlowFast in [here](https
 >     * val_cameraview_id.csv
 >     * test_cameraview_id.csv
 
-The splitted data can be download [here](to be updated...)(for accessable person only). After download the folder data, please put it into ./X3D_training/data/
+The splitted data can be download [here](https://github.com/VTCC-uTVM/data/tree/main/data)(for accessable person only). After download the folder data, please put it into ./X3D_training/data/
 
 
-Beside, the download file includes *.csv  corresponding to each fold and camera view, which categorized into training (`train_cameraview_id.csv`), validation (`val_cameraview_id.csv`) and testing (`test_cameraview_id.csv`). The csv file can be download [here](to be updated...)(for accessable person only). The content of *.csv files is formated as follows:
+Beside, the download file includes *.csv  corresponding to each fold and camera view, which categorized into training (`train_cameraview_id.csv`), validation (`val_cameraview_id.csv`) and testing (`test_cameraview_id.csv`). The content of *.csv files is formated as follows:
 ```
 path_to_video_1 label_1
 path_to_video_2 label_2
@@ -39,7 +39,7 @@ path_to_video_N label_N
 
 # Reproduce the result on AICity 2021 Challenge
 ## Train
-Pretrained model of X3D-L can be download in ['here']{}. After downloading the pretrained model, please put the file into ./X3D_training/
+Pretrained model of X3D-L can be download in ['here']{https://github.com/VTCC-uTVM/data/tree/main/pretrained_model}. After downloading the pretrained model, please put the file into ./X3D_training/
 ```bash
 cd X3D_training
 ```
@@ -60,7 +60,7 @@ The format of inference should be similar with the A2 dataset, which is provided
 >       * ...
 >     * video_ids.csv
 
-The checkpoints after trainning process can be downloaded in ['here']. After downloading the checkpoints, please put into ./X3D_inference/checkpoint_submit/
+The checkpoints after trainning process can be downloaded in ['here']{https://github.com/VTCC-uTVM/data/tree/main/checkpoint_submit}. After downloading the checkpoints, please put into ./X3D_inference/checkpoint_submit/
 ```bash
 cd X3D_inference
 ```
