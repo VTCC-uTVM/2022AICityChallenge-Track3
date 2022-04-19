@@ -70,8 +70,8 @@ python inference_ensemble_3_view.py --cfg configs/Kinetics/X3D_L.yaml NUM_GPUS 1
 DATA.PATH_TO_DATA_DIR: path to Test Dataset (e.g., A2, B)
 Submission file appeare in ./output
 
-## Leaderboard
-|TeamName|MRR|Link|
+## Public Leaderboard
+|TeamName|F1-Score|Link|
 |--------|----|-------|
 |**VTCC_uTVM(Ours)**|0.3492|
 |Stargazer|0.3295|
