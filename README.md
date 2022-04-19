@@ -1,7 +1,7 @@
 # AICITY2022_Track3
 This repo includes the 1st place solution for AICity2022 Challenge track3 (Naturalistic Driving Action Recognition)
 
-![framework](network.png)
+![framework](GeneralPipline.png)
 # Installation
 Please find installation instructions for PyTorch and PySlowFast in [here](https://github.com/facebookresearch/SlowFast/blob/main/INSTALL.md)
 
