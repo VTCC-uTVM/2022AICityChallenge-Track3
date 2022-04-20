@@ -1,5 +1,5 @@
 # AICITY2022_Track3
-This repo includes the 1st place solution from the public leader board by the challenge submission deadline for AICity2022 Challenge Track 3 - Naturalistic Driving Action Recognition)
+This repo includes the 1st place solution from the public leader board by the challenge submission deadline for AICity2022 Challenge Track 3 - Naturalistic Driving Action Recognition
 
 ![framework](GeneralPipline.png)
 # Installation
