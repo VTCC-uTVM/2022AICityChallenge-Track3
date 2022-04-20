@@ -39,7 +39,7 @@ path_to_video_N label_N
 
 # Reproduce the result on AICity 2021 Challenge
 ## Train
-Pretrained model of X3D-L can be download in ['here'](https://github.com/VTCC-uTVM/data/tree/main/pretrained_model). After downloading the pretrained model, please put the file into ./X3D_training/
+Pretrained model of X3D-L can be download [here](https://github.com/VTCC-uTVM/data/tree/main/pretrained_model). After downloading the pretrained model, please put the file into ./X3D_training/
 ```bash
 cd X3D_training
 ```
@@ -60,7 +60,7 @@ The format of inference should be similar with the A2 dataset, which is provided
 >       * ...
 >     * video_ids.csv
 
-The checkpoints after trainning process can be downloaded in ['here'](https://github.com/VTCC-uTVM/data/tree/main/checkpoint_submit), which includes all the checkpoints of different camera views and user id. After downloading all the checkpoints, please put all files into ./X3D_inference/checkpoint_submit/
+The checkpoints after trainning process can be downloaded [here](https://github.com/VTCC-uTVM/data/tree/main/checkpoint_submit), which includes all the checkpoints of different camera views and user id. After downloading all the checkpoints, please put all files into ./X3D_inference/checkpoint_submit/
 ```bash
 cd X3D_inference
 ```
