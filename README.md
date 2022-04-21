@@ -73,4 +73,4 @@ Submission file appeare in ./output
 ## Public Leaderboard
 |TeamName|F1-Score|Link|
 |--------|----|-------|
-|**VTCC_uTVM(Ours)**|0.3492|
+|**VTCC_uTVM**|0.3492|
