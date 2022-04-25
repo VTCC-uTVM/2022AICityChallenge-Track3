@@ -115,4 +115,4 @@ If you find our work useful, please cite the following:
 
 ## Contact
 
-If you have any questions, feel free to contact Tung Tran ([tungtm6@viettel.com.vn])
+If you have any questions, feel free to contact Tung Tran (tungtm6@viettel.com.vn)
