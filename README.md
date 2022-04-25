@@ -6,8 +6,20 @@ This repo includes solution for AICity2022 Challenge Track 3 - Naturalistic Driv
 Please find installation instructions for PyTorch and PySlowFast in [here](https://github.com/facebookresearch/SlowFast/blob/main/INSTALL.md)
 
 # Data Preparation For Training
+After downloading the pretrained model, please put the file into ./X3D_training/
 
-2022 AI City Challenge - Track 3 provide Dataset A1 as the training Dataset. The Dataset is then splitted into video segments and put into different folder of labels based on ground truth (user_id_*.csv). The splitted files is formated as follows:
+Change file name video in ground truth (user_id_*.csv) corresponding to file name video in training Dataset
+
+Change name of file User_id_49381.csv to user_id_49381.csv
+
+```bash
+cd X3D_training
+```
+```bash
+python cut_video.py
+```
+Warning: The process take so much time
+The Dataset is then splitted into video segments and put into different folder of labels based on ground truth (user_id_*.csv). The splitted files is formated as follows:
 
 >   * data
 >     * 0
