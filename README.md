@@ -97,3 +97,22 @@ Submission file appeare in ./output
 |TeamName|F1-Score|Link|
 |--------|----|-------|
 |**VTCC_uTVM**|0.3492|
+
+
+
+## Citation
+
+If you find our work useful, please cite the following:
+
+```text
+@inreview{Tran2022,  
+    author={Manh Tung Tran and Minh Quan Vu and Ngoc Duong Hoang and Khac-Hoai Nam Bui},  
+    title={An Effective Temporal Localization Method with Multi-View 3D Action Recognition for Untrimmed Naturalistic Driving Videos},  
+    booktitle={CVPR Workshop},
+    year={2022}  
+}
+```
+
+## Contact
+
+If you have any questions, feel free to contact Tung Tran ([tungtm6@viettel.com.vn])
