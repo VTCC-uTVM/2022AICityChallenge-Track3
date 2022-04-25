@@ -6,19 +6,21 @@ This repo includes solution for AICity2022 Challenge Track 3 - Naturalistic Driv
 Please find installation instructions for PyTorch and PySlowFast in [here](https://github.com/facebookresearch/SlowFast/blob/main/INSTALL.md)
 
 # Data Preparation For Training
-After downloading the pretrained model, please put the file into ./X3D_training/
+Download the training data (A1), which is provided by 2022 ACity Challenge and put the download file into ./X3D_training/
 
-Change file name video in ground truth (user_id_*.csv) corresponding to file name video in training Dataset
+Note: Due to the file name in .csv file and the file name of videos (.mp4) are not matching (for example, **Rear_view_User_id_49381_1**(in .csv file) and  **Rearview_mirror_user_id_49381_NoAudio_1** (in video files)), we should change the file names in csv file (user_id_*.csv) similar to the file name of coresponding videos. 
 
-Change name of file User_id_49381.csv to user_id_49381.csv
+Futhermore, for the sychornization, please change the name of csv file in **user_id_49381 folder** of the download data from  **User_id_49381.csv** to **user_id_49381.csv**
 
 ```bash
 cd X3D_training
 ```
+Splitting training data into multiple video segments using the following command (around 04 hours of time consuming, the splitted data can be download [here](https://github.com/VTCC-uTVM/data/tree/main/data)(for accessable person only)):
 ```bash
 python cut_video.py
 ```
-Warning: The process take so much time
+After excuting the above command, the output data is located in ./X3D_training/data/
+ 
 The Dataset is then splitted into video segments and put into different folder of labels based on ground truth (user_id_*.csv). The splitted files is formated as follows:
 
 >   * data
@@ -32,22 +34,31 @@ The Dataset is then splitted into video segments and put into different folder o
 >       * VIDEO1.MP4
 >       * VIDEO2.MP4
 >       * VIDEO3.MP4
->       * ...
+
+
+The next step is to create the grouth truth (.csv files) of the splitting data which categorized into trainning (`train_cameraview_id.csv`), validation (`val_cameraview_id.csv`) and testing (`test_cameraview_id.csv`) using the following command:
+
+```bash
+python create_csv.py
+```
+After excuting the above command, the output data is located in ./X3D_training/data/ .The grouth truth files is formated as follows:
+
+>   * data
 >     * train_cameraview_id.csv
+>       ...
 >     * val_cameraview_id.csv
+>       ...
 >     * test_cameraview_id.csv
+>       ...
 
-The splitted data can be download [here](https://github.com/VTCC-uTVM/data/tree/main/data)(for accessable person only). After download the folder data, please put it into ./X3D_training/data/
+The content of *.csv files are formated as follows:
 
+>       * path_to_video_1 label_1
+>       * path_to_video_2 label_2
+>       * path_to_video_3 label_3
+>       ...
+>       * path_to_video_N label_N
 
-Beside, the download file includes *.csv  corresponding to each fold and camera view, which categorized into training (`train_cameraview_id.csv`), validation (`val_cameraview_id.csv`) and testing (`test_cameraview_id.csv`). The content of *.csv files is formated as follows:
-```
-path_to_video_1 label_1
-path_to_video_2 label_2
-path_to_video_3 label_3
-...
-path_to_video_N label_N
-```
 
 # Reproduce the result on AICity 2021 Challenge
 ## Train
