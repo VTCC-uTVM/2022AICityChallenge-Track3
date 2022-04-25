@@ -10,7 +10,7 @@ Download the training data (A1), which is provided by 2022 ACity Challenge and p
 
 Note: Due to the file name in .csv file and the file name of videos (.mp4) are not matching (for example, **Rear_view_User_id_49381_1**(in .csv file) and  **Rearview_mirror_user_id_49381_NoAudio_1** (in video files)), we should change the file names in csv file (user_id_*.csv) similar to the file name of coresponding videos. 
 
-Futhermore, for the sychornization, please change the name of csv file in **user_id_49381 folder** of the download data from  **User_id_49381.csv** to **user_id_49381.csv**
+Futhermore, for the synchronization, please change the name of csv file in **user_id_49381 folder** of the download data from  **User_id_49381.csv** to **user_id_49381.csv**
 
 ```bash
 cd X3D_training
@@ -19,7 +19,7 @@ Splitting training data into multiple video segments using the following command
 ```bash
 python cut_video.py
 ```
-After excuting the above command, the output data is located in ./X3D_training/data/
+After executing the above command, the output data is located in ./X3D_training/data/
  
 The Dataset is then splitted into video segments and put into different folder of labels based on ground truth (user_id_*.csv). The splitted files is formated as follows:
 
@@ -36,12 +36,12 @@ The Dataset is then splitted into video segments and put into different folder o
 >       * VIDEO3.MP4
 
 
-The next step is to create the grouth truth (.csv files) of the splitting data which categorized into trainning (`train_cameraview_id.csv`), validation (`val_cameraview_id.csv`) and testing (`test_cameraview_id.csv`) using the following command:
+The next step is to create the ground truth (.csv files) of the splitting data which categorized into trainning (`train_cameraview_id.csv`), validation (`val_cameraview_id.csv`) and testing (`test_cameraview_id.csv`) using the following command:
 
 ```bash
 python create_csv.py
 ```
-After excuting the above command, the output data is located in ./X3D_training/data/ .The grouth truth files is formated as follows:
+After executing the above command, the output data is located in ./X3D_training/data/ .The ground truth files is formated as follows:
 
 >   * data
 >     * train_cameraview_id.csv
@@ -71,7 +71,7 @@ python tools/run_net.py --cfg configs/Kinetics/X3D_L.yaml NUM_GPUS 1 DATA.PATH_T
 ```
 Outputs of the trainning process (i.e., checkpoint) are saving in the main folder, which are formated as `checkpoint_cameraview_id`
 
-Note: We excute the training with A100 GPU. For other GPU, please change the value of  batch size in ./Training/configs/Kinetics/X3D_L.yaml
+Note: We execute the training with A100 GPU. For other GPU, please change the value of  batch size in ./Training/configs/Kinetics/X3D_L.yaml
 
 ## Inference
 The format of inference should be similar with the A2 dataset, which is provided by 2022 AI City Challenge. The format of A2 dataset as follows:
@@ -114,5 +114,6 @@ If you find our work useful, please cite the following:
 ```
 
 ## Contact
-
+Khac-Hoai Nam Bui (nambkh@viettel.com.vn)
 Manh Tung Tran (tungtm6@viettel.com.vn)
+Minh Quan Vu (quanvm4@viettel.com.vn)
