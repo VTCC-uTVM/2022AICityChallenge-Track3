@@ -15,7 +15,7 @@ Futhermore, for the sychornization, please change the name of csv file in **user
 ```bash
 cd X3D_training
 ```
-Splitting training data into multiple video segments using the following command (around 04 hours of time consuming, the splitted data can be download [here](https://github.com/VTCC-uTVM/data/tree/main/data)(for accessable person only)):
+Splitting training data into multiple video segments using the following command (around 04 hours of time consuming):
 ```bash
 python cut_video.py
 ```
@@ -62,7 +62,7 @@ The content of *.csv files are formated as follows:
 
 # Reproduce the result on AICity 2021 Challenge
 ## Train
-Pretrained model of X3D-L can be download [here](https://github.com/tmt-uet/2022AICityChallenge-Track3-Pretrained-model/tree/main/pretrained_model). After downloading the pretrained model, please put the file into ./X3D_training/
+Pretrained model of X3D-L can be download [here](https://drive.google.com/drive/folders/1UwhvMoCf36y82KN5rd7ZHzrv1-aTWprl?usp=sharing). After downloading the pretrained model, please put the file into ./X3D_training/
 ```bash
 cd X3D_training
 ```
@@ -83,7 +83,7 @@ The format of inference should be similar with the A2 dataset, which is provided
 >       * ...
 >     * video_ids.csv
 
-The checkpoints after trainning process can be downloaded [here](https://github.com/tmt-uet/2022AICityChallenge-Track3-Pretrained-model/tree/main/checkpoint_submit), which includes all the checkpoints of different camera views and user id. After downloading all the checkpoints, please put all files into ./X3D_inference/checkpoint_submit/
+The checkpoints after trainning process can be downloaded [here](https://drive.google.com/drive/folders/1X99U2yekGOLeqlmD91lI554BjNc_3fOA?usp=sharing), which includes all the checkpoints of different camera views and user id. After downloading all the checkpoints, please put all files into ./X3D_inference/checkpoint_submit/
 ```bash
 cd X3D_inference
 ```
