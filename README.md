@@ -115,5 +115,7 @@ If you find our work useful, please cite the following:
 
 ## Contact
 Khac-Hoai Nam Bui (nambkh@viettel.com.vn)
+
 Manh Tung Tran (tungtm6@viettel.com.vn)
+
 Minh Quan Vu (quanvm4@viettel.com.vn)
