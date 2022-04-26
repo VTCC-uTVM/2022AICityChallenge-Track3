@@ -15,7 +15,7 @@ Futhermore, for the synchronization, please change the name of csv file in **use
 ```bash
 cd X3D_training
 ```
-Splitting training data into multiple video segments using the following command (around 04 hours of time consuming):
+Splitting training data into multiple video segments using the following command (around 04 hours of time consuming, the splitted data can be download [here](https://github.com/VTCC-uTVM/data/tree/main/data)(for accessable person only)):
 ```bash
 python cut_video.py
 ```
