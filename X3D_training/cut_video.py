@@ -1,4 +1,3 @@
-
 # Import everything needed to edit video clips
 from moviepy.editor import *
 import pandas as pd
@@ -28,12 +27,12 @@ def cut_video(clip1, time_start, time_end, path_video):
     print("---------------------------------------")
     clip2.write_videofile(path_video)
 #create folder data
-if not os.path.isdir('data_process'):
-    os.makedirs('data_process')
+if not os.path.isdir('data'):
+    os.makedirs('data')
 else: 
     print("folder already exists.")
 for i in range(18):
-    data_dir = 'data_process/{}'.format(str(i))
+    data_dir = 'data/{}'.format(str(i))
     CHECK_FOLDER = os.path.isdir(data_dir)
     if not CHECK_FOLDER:
         os.makedirs(data_dir)
@@ -45,12 +44,11 @@ for folder_name in os.listdir('2022/A1'):
     path_folder = '2022/A1/{}'.format(folder_name)
     path_csv = '{}/{}.csv'.format(path_folder, folder_name)
     print(path_folder, path_csv)
-
     df = pd.read_csv(path_csv)
-    print(df.head())
-    print(len(df))
-    print(df.columns)
-    print(df['User ID'][0])
+    # print(df.head())
+    # print(len(df))
+    # print(df.columns)
+    # print(df['User ID'][0])
     file_name = ''
     count = 0
     for i in range(len(df)):
@@ -68,13 +66,13 @@ for folder_name in os.listdir('2022/A1'):
                 ftr = [3600,60,1]
                 time_start = sum([a*b for a,b in zip(ftr, map(int,df['Start Time'][i].split(':')))])
                 time_end = sum([a*b for a,b in zip(ftr, map(int,df['End Time'][i].split(':')))])
-                path_video = 'data_process/{}/{}_{}_{}.MP4'.format(df['Label/Class ID'][i], file_name, df['End Time'][i], df['Start Time'][i+1])
+                path_video = 'data/{}/{}_{}_{}.MP4'.format(df['Label/Class ID'][i], file_name, df['End Time'][i], df['Start Time'][i+1])
                 cut_video(clip, time_start, time_end, path_video)
                 #Segment Transition as label 0
                 time_start = sum([a*b for a,b in zip(ftr, map(int,df['End Time'][i].split(':')))])
                 time_end = sum([a*b for a,b in zip(ftr, map(int,df['Start Time'][i+1].split(':')))])            
                 print('time_start', time_start, 'time_end', time_end)
-                path_video = 'data_process/{}/{}_{}_{}.MP4'.format(0, file_name, df['End Time'][i], df['Start Time'][i+1])
+                path_video = 'data/{}/{}_{}_{}.MP4'.format(0, file_name, df['End Time'][i], df['Start Time'][i+1])
                 cut_video(clip, time_start, time_end, path_video)
                 count +=1
             except Exception as e:
