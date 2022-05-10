@@ -317,9 +317,9 @@ def load_checkpoint(
                             ]
                     checkpoint["model_state"] = model_state_dict_new
 
-            # pre_train_dict = checkpoint["model_state"]
+            pre_train_dict = checkpoint["model_state"]
             print('load model x3d_l')
-            pre_train_dict = torch.load('x3d_l_1.pyth')["model_state"]
+#             pre_train_dict = torch.load('x3d_l_1.pyth')["model_state"]
             model_dict = ms.state_dict()
             # Match pre-trained weights that have same shape as current model.
             pre_train_dict_match = {
