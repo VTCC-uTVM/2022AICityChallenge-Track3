@@ -62,7 +62,7 @@ The content of *.csv files are formated as follows:
 
 # Reproduce the result on AICity 2021 Challenge
 ## Train
-Pretrained model of X3D-L can be download [here](https://drive.google.com/drive/folders/1UwhvMoCf36y82KN5rd7ZHzrv1-aTWprl?usp=sharing). After downloading the pretrained model, please put the file into ./X3D_training/
+Pretrained model of X3D-L can be download [here](https://dl.fbaipublicfiles.com/pyslowfast/x3d_models/x3d_l.pyth). After downloading the pretrained model, please put the file into ./X3D_training/
 ```bash
 cd X3D_training
 ```
