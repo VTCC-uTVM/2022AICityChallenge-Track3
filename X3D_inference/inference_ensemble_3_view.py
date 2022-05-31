@@ -380,6 +380,7 @@ if __name__ == "__main__":
     prob_ensemble = []
     dataframe_list = []
     #ensemble 3 model
+    #iterate each video
     for i in range(1, len(vid_info)+1):
         len_prob = min(len(prob_1[str(i)]), len(prob_2[str(i)]), len(prob_3[str(i)]))
         prob_ensemble_video = []
