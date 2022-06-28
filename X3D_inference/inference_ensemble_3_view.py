@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 # Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved.
 import numpy as np
@@ -325,7 +326,6 @@ if __name__ == "__main__":
                     './checkpoint_submit/checkpoint_epoch_dashboard_49381_00010_58.33.pyth']  
     vid_info = dict(sorted(vid_info.items()))
     prob_1, video_order = main(cfg, vid_info, labels, filelist, checkpoint_dashboard_list)
-
     video_ids={}
     video_names = []
     with open(os.path.join(path, 'video_ids.csv')) as csvfile:
@@ -351,8 +351,6 @@ if __name__ == "__main__":
                     './checkpoint_submit/checkpoint_epoch_rearview_38058_00015_52.94.pyth',
                     './checkpoint_submit/checkpoint_epoch_rearview_49381_00008_61.11.pyth'] 
     prob_2, video_order = main(cfg, vid_info, labels, filelist, checkpoint_rearview_list)
-    #hi everyone, it is my honor to be here for discussinng our work in track 3 in the challenge
-    # 
     video_ids={}
     video_names = []
     with open(os.path.join(path, 'video_ids.csv')) as csvfile:
@@ -378,19 +376,15 @@ if __name__ == "__main__":
                     './checkpoint_submit/checkpoint_epoch_right_38058_00008_47.06.pyth',
                     './checkpoint_submit/checkpoint_epoch_right_49381_00006_69.44.pyth'] 
     prob_3, video_order = main(cfg, vid_info, labels, filelist, checkpoint_right_list)
-
     prob_ensemble = []
     dataframe_list = []
     #ensemble 3 model
     #iterate each video
     for i in range(1, len(vid_info)+1):
-        len_prob = min(len(prob_3[str(i)]), len(prob_3[str(i)]), len(prob_3[str(i)]))
-        # print('prob_1[str(i)]', prob_1[str(i)])
-        # len_prob = min(len(prob_1[str(i)]))
+        len_prob = min(len(prob_1[str(i)]), len(prob_2[str(i)]), len(prob_3[str(i)]))
         prob_ensemble_video = []
         for ids in range(len_prob):
-            # prob_sub_mean = (prob_1[str(i)][ids] + prob_2[str(i)][ids] + prob_3[str(i)][ids])/3
-            prob_sub_mean = prob_3[str(i)][ids]
+            prob_sub_mean = (prob_1[str(i)][ids] + prob_2[str(i)][ids] + prob_3[str(i)][ids])/3
             prob_ensemble_video.append(prob_sub_mean)
         #### post processing
         ###### classification 
@@ -410,8 +404,6 @@ if __name__ == "__main__":
             label = labels[idx]
             print(
                 '{}\t{}\t{:.1f}s - {:.1f}s\t'.format(i, label,start, end))
-            # text_file.write('{} {} {} {}\n'.format(i, label,start, end))   
             dataframe_list.append([i, label,start, end])
-    # text_file.close()
     data = pd.DataFrame(dataframe_list, columns =[0, 1, 2, 3])
     general_submission(data)
