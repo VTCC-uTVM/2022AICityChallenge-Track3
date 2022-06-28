@@ -268,7 +268,7 @@ def merge_and_remove(data):
     df_total = df_total.drop(columns=['index'])
     df_total = df_total.sort_values(by=[0, 1])
     print('df_total', df_total)
-    df_total.to_csv('./output/AIC_rearview.txt', sep=' ', index = False, header=False)
+    df_total.to_csv('./output/AIC_1404_ensemble_3view_1s_submit.txt', sep=' ', index = False, header=False)
 def general_submission(data):
     # data = pd.read_csv(filename, sep=" ", header=None)
     print(data)
