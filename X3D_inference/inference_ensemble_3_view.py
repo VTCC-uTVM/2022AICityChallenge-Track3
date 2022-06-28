@@ -268,7 +268,7 @@ def merge_and_remove(data):
     df_total = df_total.drop(columns=['index'])
     df_total = df_total.sort_values(by=[0, 1])
     print('df_total', df_total)
-    df_total.to_csv('./output/AIC_1404_ensemble_3view_1s_submit.txt', sep=' ', index = False, header=False)
+    df_total.to_csv('./output/AIC_rearview.txt', sep=' ', index = False, header=False)
 def general_submission(data):
     # data = pd.read_csv(filename, sep=" ", header=None)
     print(data)
@@ -300,7 +300,7 @@ if __name__ == "__main__":
     video_names = []
     path = cfg.DATA.PATH_TO_DATA_DIR
     print(path)
-    with open('{}/video_ids.csv'.format(path), "r") as csvfile:
+    with open(os.path.join(path, 'video_ids.csv')) as csvfile:
         csvReader = csv.reader(csvfile, delimiter=',')
         for idx, row in enumerate(csvReader):
             if idx > 0:
@@ -325,9 +325,10 @@ if __name__ == "__main__":
                     './checkpoint_submit/checkpoint_epoch_dashboard_49381_00010_58.33.pyth']  
     vid_info = dict(sorted(vid_info.items()))
     prob_1, video_order = main(cfg, vid_info, labels, filelist, checkpoint_dashboard_list)
+
     video_ids={}
     video_names = []
-    with open('{}/video_ids.csv'.format(path), "r") as csvfile:
+    with open(os.path.join(path, 'video_ids.csv')) as csvfile:
         csvReader = csv.reader(csvfile, delimiter=',')
         for idx, row in enumerate(csvReader):
             if idx > 0:
@@ -350,9 +351,11 @@ if __name__ == "__main__":
                     './checkpoint_submit/checkpoint_epoch_rearview_38058_00015_52.94.pyth',
                     './checkpoint_submit/checkpoint_epoch_rearview_49381_00008_61.11.pyth'] 
     prob_2, video_order = main(cfg, vid_info, labels, filelist, checkpoint_rearview_list)
+    #hi everyone, it is my honor to be here for discussinng our work in track 3 in the challenge
+    # 
     video_ids={}
     video_names = []
-    with open('{}/video_ids.csv'.format(path), "r") as csvfile:
+    with open(os.path.join(path, 'video_ids.csv')) as csvfile:
         csvReader = csv.reader(csvfile, delimiter=',')
         for idx, row in enumerate(csvReader):
             if idx > 0:
@@ -375,17 +378,19 @@ if __name__ == "__main__":
                     './checkpoint_submit/checkpoint_epoch_right_38058_00008_47.06.pyth',
                     './checkpoint_submit/checkpoint_epoch_right_49381_00006_69.44.pyth'] 
     prob_3, video_order = main(cfg, vid_info, labels, filelist, checkpoint_right_list)
-    path_file_write = "./output/Output_ensemble_1004_3view_1s.txt"
-    text_file = open(path_file_write, "w")
+
     prob_ensemble = []
     dataframe_list = []
     #ensemble 3 model
     #iterate each video
     for i in range(1, len(vid_info)+1):
-        len_prob = min(len(prob_1[str(i)]), len(prob_2[str(i)]), len(prob_3[str(i)]))
+        len_prob = min(len(prob_3[str(i)]), len(prob_3[str(i)]), len(prob_3[str(i)]))
+        # print('prob_1[str(i)]', prob_1[str(i)])
+        # len_prob = min(len(prob_1[str(i)]))
         prob_ensemble_video = []
         for ids in range(len_prob):
-            prob_sub_mean = (prob_1[str(i)][ids] + prob_2[str(i)][ids] + prob_3[str(i)][ids])/3
+            # prob_sub_mean = (prob_1[str(i)][ids] + prob_2[str(i)][ids] + prob_3[str(i)][ids])/3
+            prob_sub_mean = prob_3[str(i)][ids]
             prob_ensemble_video.append(prob_sub_mean)
         #### post processing
         ###### classification 
